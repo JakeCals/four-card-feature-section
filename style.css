@@ -1,0 +1,134 @@
+:root {
+  --red: hsl(0, 78%, 62%);
+  --cyan: hsl(180, 62%, 55%);
+  --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);
+  --very-dark-blue: hsl(234, 12%, 34%);
+  --grayish-blue: hsl(229, 6%, 66%);
+  --very-light-gray: hsl(0, 0%, 98%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--very-light-gray);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-page {
+  max-width: 300px;
+  margin: 4em 0;
+  text-align: center;
+  color: var(--grayish-blue);
+}
+
+.title-page {
+  font-size: 1.5rem;
+  font-weight: 200;
+  margin-bottom: 0.8em;
+}
+
+.title-page span {
+  font-weight: 600;
+  color: var(--very-dark-blue);
+}
+
+.desc-page {
+  margin-bottom: 4em;
+}
+
+.card-items {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    'supervisor'
+    'team-builder'
+    'karma'
+    'calculator';
+}
+
+.card {
+  max-width: 300px;
+  text-align: left;
+  padding: 1em;
+  background-color: white;
+  border-radius: 0.3em;
+  margin-bottom: 1.5em;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.title-card {
+  color: var(--very-dark-blue);
+  font-size: 1.2rem;
+}
+
+.desc-card {
+  margin-bottom: 2em;
+}
+
+.img-icon {
+  display: flex;
+  justify-content: end;
+}
+
+.card-supervisor {
+  grid-area: supervisor;
+  border-top: 3px solid var(--cyan);
+}
+
+.card-team-builder {
+  grid-area: team-builder;
+  border-top: 3px solid var(--red);
+}
+
+.card-karma {
+  grid-area: karma;
+  border-top: 3px solid var(--orange);
+}
+
+.card-calculator {
+  grid-area: calculator;
+  border-top: 3px solid var(--blue);
+}
+
+@media (min-width: 768px) {
+  .card-page {
+    max-width: 90%;
+    margin: 2em;
+    display: grid;
+  }
+
+  .information-page {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .title-page {
+    font-size: 2rem;
+    margin: 0 2em 0.5em 2em;
+  }
+
+  .card-items {
+    gap: 1.5em;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      '.. team-builder ..'
+      'supervisor team-builder calculator'
+      'supervisor karma calculator'
+      '.. karma ..';
+  }
+
+  .card {
+    margin-bottom: 0;
+  }
+}
